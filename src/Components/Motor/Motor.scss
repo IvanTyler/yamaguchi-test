@@ -31,7 +31,11 @@
 
     @media (max-width: 750px) {
       display: flex;
-      justify-self: center;
+      margin: 0 auto 26px;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
     }
   }
 
