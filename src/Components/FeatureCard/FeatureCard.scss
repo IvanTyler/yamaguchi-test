@@ -1,0 +1,38 @@
+.feature-card {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 15px;
+  background-color: #DBDBDB;
+  border-radius: 60px;
+  padding: 12px 14px;
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
+
+  .icon {
+    font-size: 45px;
+    background-color: var(--dark-gray);
+  }
+
+  &__wrapper-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    min-width: 76px;
+    border-radius: 50%;
+    border: solid 2px var(--dark-gray);
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+  }
+
+}

@@ -1,0 +1,162 @@
+.motor {
+
+  .G-container {
+    position: relative;
+    height: 800px;
+    background-image: url('/public/assets/img/motor.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+
+    @media (max-width: 750px) {
+      background-image: none;
+      height: initial;
+    }
+
+    @media (max-width: 500px) {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .feature-card {
+    grid-area: feature-card;
+    display: none;
+    margin-bottom: 26px;
+
+    .icon {
+      font-size: 55px;
+    }
+
+    @media (max-width: 750px) {
+      display: flex;
+      justify-self: center;
+    }
+  }
+
+  &__title,
+  &__sub-title {
+    font-family: var(--main-font);
+    font-weight: 600;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 49px;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    max-width: 820px;
+    justify-self: end;
+
+    br {
+      display: none;
+
+      @media (max-width: 500px) {
+        display: block;
+      }
+    }
+
+    @media (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-self: center;
+      color: #fff;
+    }
+
+    @media (max-width: 400px) {
+      text-align: justify;
+    }
+
+    span {
+
+      &:first-child {
+        @media (max-width: 750px) {
+          font-size: 32.5px;
+        }
+      }
+
+      &:last-child {
+        @media (max-width: 750px) {
+          font-size: 23px;
+        }
+      }
+
+    }
+
+  }
+
+  &__wrapper-title {
+    position: relative;
+    border-radius: 28px;
+
+    @media (max-width: 750px) {
+      margin-top: 34px;
+    }
+  }
+
+  &__picture {
+    display: inline-block;
+  }
+
+  &__picture,
+  &__img {
+    width: 100%;
+    border-radius: 28px;
+    visibility: hidden;
+
+    @media (max-width: 750px) {
+      visibility: visible;
+    }
+  }
+
+  &__sub-title {
+    margin-top: 13px;
+    font-size: clamp(22px, 2vw, 34px);
+    line-height: 120%;
+    color: var(--light-gray);
+
+    @media (max-width: 750px) {
+      margin-top: 0;
+      top: 18px;
+      left: 20px;
+      position: absolute;
+      color: #454545;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 160px;
+      text-align: left;
+    }
+  }
+
+  &__wrapper-text {
+    right: 46px;
+    bottom: 38px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: clamp(99px, 10vw, 180px);
+    height: clamp(99px, 10vw, 180px);
+    background-image: url("/public/assets/icons/star.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 750px) {
+      right: calc(50% - clamp(49px, 5vw, 90px));
+      bottom: 15px;
+    }
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    font-weight: 600;
+    color: #fff;
+    font-size: clamp(12px, 1.3vw, 21px);
+    text-align: center;
+  }
+}

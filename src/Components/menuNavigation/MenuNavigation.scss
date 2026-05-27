@@ -1,0 +1,146 @@
+.menu-navigation {
+  position: fixed;
+  left: 0;
+  top: calc(50% - 303px);
+  z-index: 1000;
+  left: -560px;
+
+  @media (max-width: 1500px) {
+    left: -610px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 706px;
+    height: 706px;
+    border-radius: 50%;
+    border: #625B56 10px solid;
+    transition: transform 0.5s ease;
+
+    .menu-navigation-list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      $item-count: 5;
+      $radius: 303px; // Уменьшил радиус для текста
+      $start-angle: -40deg;
+      $end-angle: 40deg;
+
+      &__item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 74px;
+        height: 74px;
+        background: #746D68;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 16px 14px 30.7px 0 #625856;
+        color: white;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        .icon {
+          width: 40px;
+          height: 40px;
+          background-color: #ADACAC;
+        }
+
+        .label {
+          font-size: 9px;
+          line-height: 1.1;
+          max-width: 70px;
+        }
+
+        .desc {
+          position: absolute;
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 33px;
+          letter-spacing: -1%;
+          text-transform: uppercase;
+          color: #fff;
+          transform: translateX(85%);
+          opacity: 0;
+          overflow: hidden;
+          transition: .2s;
+          white-space: nowrap;
+        }
+
+        .desc.fen {
+          transform: translateX(80%) rotate(20deg);
+          top: 77%;
+          text-align: left;
+        }
+
+        .desc.motor {
+          transform: translateX(72%) rotate(-20deg);
+          white-space: break-spaces;
+          top: -48%;
+        }
+
+        // Изначальное позиционирование на правой половине
+        //@for $i from 1 through $item-count {
+        //  &:nth-child(#{$i}) {
+        //    $angle: $start-angle + (($end-angle - $start-angle) / ($item-count - 1)) * ($i - 1);
+        //    transform: translate(22%, -75%) rotate($angle) translate($radius) rotate(-$angle);
+        //  }
+        //}
+
+        &:nth-child(4) .icon {
+          width: 54px;
+          height: 54px;
+        }
+
+        &:first-child .icon {
+          transform: rotate(20deg);
+        }
+        &:last-child .icon {
+          transform: rotate(-20deg);
+        }
+      }
+
+      &__item.active {
+        width: 103px;
+        height: 103px;
+        background-color: #DBDBDB;
+        color: #726965;
+        z-index: 10;
+
+        .icon {
+          width: 60px;
+          height: 60px;
+          background-color: #726965;
+        }
+
+        .desc {
+          opacity: 1;
+          overflow: visible;
+        }
+
+        &:nth-child(4) .icon {
+          width: 76px;
+          height: 76px;
+        }
+
+        .label {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
